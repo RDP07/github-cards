@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CardList from './CardList'
-import Cards from './Cards'
-
-// <Form onSubmit={ this.addNewCard }/>
+import Form from './Form'
 
 class App extends React.Component {
   state = {
@@ -13,14 +11,13 @@ class App extends React.Component {
     console.log(cardInfo)
     this.setState(prevState => ({
       cards: prevState.cards.concat(cardInfo)
-    }))
-    
+    }))  
   }
 
   render () {
     return (
       <div>
-        
+        <Form onSubmit={ this.addNewCard }/>
         <CardList cards={ this.state.cards } />
       </div>
     );
