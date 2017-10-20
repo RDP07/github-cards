@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 
-export default class Cards extends Component { 
-  render() {
-    return (
-      <div>
-        <img src= 'http://placehold.it/75' />
-        <div style={{display: 'inline-block', marginLeft: 10}}>
-          <div style={{fontSize: '1.25em', fontWeight: 'bold'}}>
-            Name here...
-          </div>
-          <div>Company here...</div>
+const Cards = (props) => { 
+  return (
+    <div style={{margin: '1em'}}>
+      <img width='75' src= { props.avatar_url } alt="User's Avatar"/>
+      <div style={{display: 'inline-block', marginLeft: 10}}>
+        <div style={{fontSize: '1.25em', fontWeight: 'bold'}}>
+          { props.name }
         </div>
+        <div>{ props.company }</div>
       </div>
-    )
-  }
-}
+    </div>
+  );
+};
 
-
+export default Cards
